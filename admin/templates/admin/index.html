@@ -42,14 +42,18 @@
         </tr>
 
         {% for i in list %}
+		{% for j in tov %}
+		{% if i.product == j.id %}
             <tr>
 
 
-				<td class="index__td">{{ i.product }}</td>
+				<td class="index__td">id= {{j.id}}. "{{ j.name }}" {{j.author}}</td>
 				<td class="index__td">{{ i.delivary }}</td>
 				<td class="index__td">{{ i.live }}</td>
 				<td class="create__td">{{ i.state }}</td>
             </tr>
+		{% endif %}
+        {% endfor %}
 		{% endfor %}
 
     </table>

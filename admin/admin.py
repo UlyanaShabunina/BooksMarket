@@ -26,6 +26,7 @@ def index():
 
     info = []
     user = []
+    tov=[]
     try:
         info = Orders.query.filter_by(state="На складе").all()
         info += Orders.query.filter_by(state='Заказ в пути').all()
@@ -33,11 +34,12 @@ def index():
 
         for i in info:
             us = Users.query.filter_by(id=i.login).all()
+            tov += Product.query.filter_by(id=i.product).all()
             user += us
     except:
         print("Ошибка")
 
-    return render_template('admin/index.html', list=info, user=user)
+    return render_template('admin/index.html', list=info, user=user, tov=tov)
 
 
 @admin.route('/logout', methods=["POST", "GET"])

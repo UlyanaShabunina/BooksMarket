@@ -1,6 +1,6 @@
 from flask import Blueprint, session, render_template, request, url_for, redirect, flash
 from config import db
-from models import Orders, Delivary, ChatMessage, Users
+from models import Orders, Delivary, ChatMessage, Users, Product
 
 delivery = Blueprint('delivery', __name__, template_folder='templates', static_folder='static')
 
@@ -102,6 +102,7 @@ def orders():
 
     user1 = []
     info1 =[]
+    tov=[]
 
     try:
         info = Orders.query.filter_by(state='Ждет подтверждения').all()
@@ -109,6 +110,7 @@ def orders():
 
         for i in info1:
             uss = Users.query.filter_by(id=i.login).all()
+            tov += Product.query.filter_by(id=i.product).all()
             user1 += uss
 
     except:
@@ -116,7 +118,7 @@ def orders():
 
     else:
         ord = Orders.query.order_by(Orders.id).all()
-        return render_template("/delivery/orders.html", ord=ord, list=info1, user1=user1)
+        return render_template("/delivery/orders.html", ord=ord, list=info1, user1=user1, tov=tov)
 
 
 @delivery.route('/look/<int:id>')
@@ -152,6 +154,7 @@ def information():
 
     info = []
     user = []
+    tov = []
     try:
         info1 = Orders.query.filter_by(state='Заказ прибыл к месту назначения').all()
         info1 += Orders.query.filter_by(state='Заказ в пути').all()
@@ -161,10 +164,11 @@ def information():
 
         for i in info:
             us = Users.query.filter_by(id=i.login).all()
+            tov += Product.query.filter_by(id=i.product).all()
             user += us
     except:
         print("Error")
-    return render_template('/delivery/ordersaccept.html', list = info, user=user)
+    return render_template('/delivery/ordersaccept.html', list = info, user=user, tov=tov)
 
 
 @delivery.route('/delete/<int:id>')

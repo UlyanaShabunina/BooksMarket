@@ -52,8 +52,10 @@
             <td  class="index__td-text">Место жительства</td>
         </tr>
             {% for i in list %}
+                                {% for j in tov %}
+                {% if i.product == j.id %}
             <tr>
-				<td class="index__td">{{ i.product }}</td>
+				<td class="index__td">id= {{j.id}}. "{{ j.name }}" {{j.author}}</td>
 				<td class="index__td">{{ i.delivary }}</td>
 				<td class="index__td">{{ i.live }}</td>
                 <td>
@@ -65,6 +67,8 @@
                     <a target="_blank" href={{url_for("index") + "delivery/look/" + i.id|string}}>Просмотреть</a>
                 </td>
             </tr>
+                                {% endif %}
+            {% endfor %}
         {% endfor %}
         </table>
 
