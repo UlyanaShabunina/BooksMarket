@@ -82,7 +82,7 @@ class ProductAccept(db.Model):
     state = db.Column(db.String(500), nullable=False)
 
     id_prod = db.Column(db.Integer, db.ForeignKey('product.id'))
-    username = db.Column(db.Integer, db.ForeignKey('users.username'))
+    username = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
         return '<cart %r>' % self.id
