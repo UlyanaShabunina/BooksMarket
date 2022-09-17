@@ -255,7 +255,7 @@ def delete(id):
             flash('Товар удален', 'info')
             return redirect(url_for('.product'))
         except:
-            flash('Ошибка удаления', 'info')
+            flash('Товар нельзя удалить. Товар в активном заказе', 'info')
             return redirect(url_for('.product'))
 
 
