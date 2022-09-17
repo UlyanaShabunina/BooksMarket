@@ -31,7 +31,7 @@ class Users(db.Model):
     name = db.Column(db.String, nullable=False)
     username = db.Column(db.String, nullable=False, unique=True)
     email = db.Column(db.String, nullable=False)
-    number = db.Column(db.Bigint, nullable=False)
+    number = db.Column(db.Numeric, nullable=False)
     psw = db.Column(db.String, nullable=False)
 
     profile_id = db.Column(db.Integer, db.ForeignKey('profiles.id'))
