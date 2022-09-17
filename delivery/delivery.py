@@ -108,7 +108,7 @@ def orders():
         info1 = info
 
         for i in info1:
-            uss = Users.query.filter_by(username=i.login).all()
+            uss = Users.query.filter_by(id=i.login).all()
             user1 += uss
 
     except:
@@ -125,7 +125,7 @@ def look(id):
         return redirect(url_for('login'))
 
     look = Orders.query.get(id)
-    user = Users.query.filter_by(username=look.login).first()
+    user = Users.query.filter_by(username=look.id).first()
     return render_template('/delivery/look.html', look=look, user=user)
 
 
@@ -153,12 +153,14 @@ def information():
     info = []
     user = []
     try:
-        info = Orders.query.filter_by(state='Заказ прибыл к месту назначения').all()
-        info += Orders.query.filter_by(state='Заказ в пути').all()
-        info += Orders.query.filter_by(state='На складе').all()
+        info1 = Orders.query.filter_by(state='Заказ прибыл к месту назначения').all()
+        info1 += Orders.query.filter_by(state='Заказ в пути').all()
+        info1 += Orders.query.filter_by(state='На складе').all()
+
+        info = info1
 
         for i in info:
-            us = Users.query.filter_by(username=i.login).all()
+            us = Users.query.filter_by(id=i.login).all()
             user += us
     except:
         print("Error")

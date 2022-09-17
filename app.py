@@ -81,20 +81,25 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         psw = request.form.get('psw')
-        if username == 'admin' and check_password_hash(hash, psw):
-            login_admin()
-            flash('Вы успешно прошли авторизацию')
-            return redirect(url_for('.admin.index'))
-        if username == 'delivery' and check_password_hash(hash, psw):
-            login_delivery('delivery')
-            flash('Вы успешно прошли авторизацию')
-            return redirect(url_for('.delivery.orders'))
-        user = Profiles.query.filter_by(username=username).first()
-        if username and check_password_hash(user.psw, psw):
-            login_user(user)
-            flash('Вы успешно прошли авторизацию')
-            return redirect(url_for('.users.index'))
-        else:
+        try:
+            if username == 'admin' and check_password_hash(hash, psw):
+                login_admin()
+                flash('Вы успешно прошли авторизацию')
+                return redirect(url_for('.admin.index'))
+            if username == 'delivery' and check_password_hash(hash, psw):
+                login_delivery('delivery')
+                flash('Вы успешно прошли авторизацию')
+                return redirect(url_for('.delivery.orders'))
+            user = Profiles.query.filter_by(username=username).first()
+            if username and check_password_hash(user.psw, psw):
+                login_user(user)
+                flash('Вы успешно прошли авторизацию')
+                return redirect(url_for('.users.index'))
+            else:
+                flash('Введен неверный логин или пароль')
+                return redirect(url_for('login'))
+
+        except:
             flash('Введен неверный логин или пароль')
             return redirect(url_for('login'))
 

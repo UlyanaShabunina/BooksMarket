@@ -32,7 +32,7 @@ def index():
         info += Orders.query.filter_by(state='Заказ прибыл к месту назначения').all()
 
         for i in info:
-            us = Users.query.filter_by(username=i.login).all()
+            us = Users.query.filter_by(id=i.login).all()
             user += us
     except:
         print("Ошибка")
@@ -58,6 +58,31 @@ def usersList():
     us = Users.query.order_by(Users.profile_id).all()
     return render_template('admin/usersList.html', us=us)
 
+'''
+@admin.route('/deleteUser/<int:id>')
+def deleteUser(id):
+    if not isLogged():
+        return redirect(url_for('login'))
+
+    ##user_to_delete = Users.query.get(id)
+    profiles_to_deleto = Profiles.query.get(id)
+
+    print(profiles_to_deleto.id)
+
+
+
+    try:
+        ##db.session.delete(user_to_delete)
+        db.session.delete(profiles_to_deleto)
+        db.session.commit()
+
+        flash('Пользователь удален', 'info')
+        return redirect(url_for('.usersList'))
+    except:
+        flash('Ошибка удаления',  'info')
+        return render_template('/admin/usersList.html')
+'''
+
 
 @admin.route('/deleteUser/<int:id>')
 def deleteUser(id):
@@ -65,15 +90,28 @@ def deleteUser(id):
         return redirect(url_for('login'))
 
     user_to_delete = Users.query.get(id)
-    profiles_to_deleto = Profiles.query.get(id)
+    ##profiles_to_deleto = Profiles.query.get(id)
+
     try:
         db.session.delete(user_to_delete)
+        ##db.session.delete(profiles_to_deleto)
+        db.session.commit()
+
+    except:
+        flash('Ошибка удаления - вы теряете клиента!',  'info')
+        return render_template('/admin/usersList.html')
+
+    ##user_to_delete = Users.query.get(id)
+    profiles_to_deleto = Profiles.query.get(id)
+
+    try:
+        ##db.session.delete(user_to_delete)
         db.session.delete(profiles_to_deleto)
         db.session.commit()
-        flash('Пользователь удален', 'info')
         return redirect(url_for('.usersList'))
+
     except:
-        flash('Ошибка удаления',  'info')
+        flash('Ошибка удаления - вы теряете клиента!',  'info')
         return render_template('/admin/usersList.html')
 
 
