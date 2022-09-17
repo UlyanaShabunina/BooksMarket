@@ -57,7 +57,7 @@ class Orders(db.Model):
     state = db.Column(db.String(500), nullable=False)
 
     product = db.Column(db.Integer, db.ForeignKey('product.id'))
-    login = db.Column(db.String, db.ForeignKey('users.id'))
+    login = db.Column(db.String, db.ForeignKey('users.username'))
     delivary = db.Column(db.String, db.ForeignKey('delivary.name'))
 
     def __repr__(self):
