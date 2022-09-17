@@ -37,7 +37,9 @@
             <td class="index__td-text">Действия</td>
         </tr>
 
+
         {% for i in us %}
+            {% if i.id != 1 and i.id != 2 %}
             <tr>
                 <td class="index__td"> {{ i.name }}</td>
 				<td class="index__td">{{ i.username }}</td>
@@ -48,6 +50,8 @@
 
                 </td>
             </tr>
+            {% endif %}
         {% endfor %}
+
     </table>
 {% endblock %}
