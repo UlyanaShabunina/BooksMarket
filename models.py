@@ -57,7 +57,7 @@ class Orders(db.Model):
     state = db.Column(db.String(500), nullable=False)
 
     product = db.Column(db.Integer, db.ForeignKey('product.id'))
-    login = db.Column(db.String, db.ForeignKey('users.username'))
+    login = db.Column(db.Integer, db.ForeignKey('users.id'))
     delivary = db.Column(db.String, db.ForeignKey('delivary.name'))
 
     def __repr__(self):
@@ -82,7 +82,7 @@ class ProductAccept(db.Model):
     state = db.Column(db.String(500), nullable=False)
 
     id_prod = db.Column(db.Integer, db.ForeignKey('product.id'))
-    username = db.Column(db.String, db.ForeignKey('users.username'))
+    username = db.Column(db.Integer, db.ForeignKey('users.username'))
 
     def __repr__(self):
         return '<cart %r>' % self.id
