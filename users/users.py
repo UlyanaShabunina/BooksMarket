@@ -281,7 +281,7 @@ def accept(id):
     bookAccept = ProductAccept(
         state='Заказ в корзине',
         id_prod=book_to_accept.id,
-        username=us.username
+        username=us.id
     )
     try:
         db.session.add(bookAccept)
@@ -302,7 +302,7 @@ def cart():
     uid = current_user.get_id()
     so = Profiles.query.get(uid)
     try:
-        list = ProductAccept.query.filter_by(username=so.username).all()
+        list = ProductAccept.query.filter_by(username=so.id).all()
         info = list
 
         for i in list:
