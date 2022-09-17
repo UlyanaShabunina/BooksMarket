@@ -99,7 +99,7 @@ def orders(id):
         try:
             pr.count = pr.count - 1
             db.session.add(orders, pr.count)
-            db.session.delete(ProductAccept.query.get(id))
+            ##db.session.delete(ProductAccept.query.get(id))
             db.session.commit()
             flash('Товар успешно заказан! Посмотреть все заказы Вы можете в профиле', 'info')
             return redirect(url_for('.index'))

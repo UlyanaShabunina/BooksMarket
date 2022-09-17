@@ -73,7 +73,7 @@ def deleteUser(id):
         flash('Пользователь удален', 'info')
         return redirect(url_for('.usersList'))
     except:
-        flash('Ошибка удаления', 'info')
+        flash('Ошибка удаления',  'info')
         return render_template('/admin/usersList.html')
 
 
