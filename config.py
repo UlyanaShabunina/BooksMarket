@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 ##app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bjlqshdcuyfxkv:c3f0e52679fa020795211c805b3c3a3cd246027bdb5b2c3e64ad0db6b1956536@ec2-52-200-5-135.compute-1.amazonaws.com:5432/dfa2gjaos48d7'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://iuayxzykggcbvj:7661215d51d519e6aefdef97ab1234ff4b170f11c5d31e62132a77bbcb077539@ec2-52-207-15-147.compute-1.amazonaws.com:5432/d3uri0e95asqd6'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = 'xf3g82g27f9cdv443ui480nw'
