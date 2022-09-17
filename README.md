@@ -9,7 +9,7 @@
 + [Miro](https://miro.com/app/board/uXjVPWHwWrs=/)  
 + [Дизайн-проект](https://www.figma.com/file/mpYBlIvDR8e24A1yZOfsFQ/Untitled?node-id=0%3A1)  
 # Документация  
-+ Техническое задание  
++ [Техническое задание](https://drive.google.com/file/d/17KnttdK0S2v_dVZZlbH-unYGeNdizfPk/view?usp=sharing)    
 + Курсовая работа
 + Презентация
 + Видео
