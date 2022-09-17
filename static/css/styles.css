@@ -142,7 +142,6 @@ ul.mainmenu li a:hover {
     border-bottom: 1px solid #fe3e57;
 }
 
-
 div.mainmenu__header {
     display: flex;
     justify-content: space-between;
@@ -150,7 +149,7 @@ div.mainmenu__header {
 }
 
 div.content {
-    margin: 10px;
+    margin: 10px 0;
 }
 
 div.create,

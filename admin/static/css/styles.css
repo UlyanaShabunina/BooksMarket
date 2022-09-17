@@ -228,7 +228,7 @@ td.index__td-text {
     border: none;
     color: #fe3e57;
     margin-top: 4px;
-    height: 60px;
+    height: 70px;
     padding: 20px 15px;
 }
 
@@ -237,7 +237,7 @@ td.index__td {
     border: none;
     background-color: #f6f6f6;
     margin-top: 4px;
-    height: 77px;
+    height: 160px;
     padding: 20px 15px;
 }
 
@@ -369,23 +369,27 @@ h2.msg__btn-com-title {
     position: relative;
     text-align: center;
     padding-top:45px;
+    margin-right: -35px;
 }
 
 img.msg__btn-com  {
     width: 25px;
     position: absolute;
-        margin: -24px 0px 0px 136px;
+    right: -35px;
+    top: 50px;
 }
 
 h2.msg__btn-send-title {
     position: relative;
     padding-top: 45px;
+    margin-right: -35px;
 }
 
 img.msg__btn-send  {
     width: 25px;
     position: absolute;
-        margin: -24px 0px 0px 195px;
+    right: -35px;
+    top: 50px;
 }
 
 td.msg__send {

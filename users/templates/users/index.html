@@ -34,7 +34,7 @@
 				<td class="index__td">{{ i.time }}</td>
 				<td class="index__td">{{ i.house }}</td>
 				<td class="index__td">{{ i.price }}</td>
-                <td>
+                <td class="index__td-last">
                     <a class="index__btn" href={{url_for("index") + "users/prod/"  + i.id|string}}>Просмотреть</a>
                     <p class="index__text" ><a class="index__btn-cart" href={{url_for("index") + "users/accept/"  + i.id|string}}>
                         <img class="index-cart__img" src={{url_for("index") + "users/static/images/cart.svg"}} alt="cart">

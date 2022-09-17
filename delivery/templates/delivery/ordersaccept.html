@@ -42,9 +42,9 @@
         {% for i in user %}
             <tr>
 
-                <td class="index__td">{{ i.name }}</td>
-				<td class="index__td">{{ i.number }}</td>
-				<td class="index__td">{{ i.email }}</td>
+                <td class="index__td-order">{{ i.name }}</td>
+				<td class="index__td-order">{{ i.number }}</td>
+				<td class="index__td-order">{{ i.email }}</td>
 
             </tr>
         {% endfor %}
@@ -62,10 +62,10 @@
                     {% for j in tov %}
                 {% if i.product == j.id %}
             <tr>
-				<td class="index__td">"{{ j.name }}" {{j.author}}</td>
-				<td class="index__td">{{ i.delivary }}</td>
-				<td class="index__td">{{ i.live }}</td>
-				<td class="index__td">{{ i.state }}</td>
+				<td class="index__td-order">"{{ j.name }}" {{j.author}}</td>
+				<td class="index__td-order">{{ i.delivary }}</td>
+				<td class="index__td-order">{{ i.live }}</td>
+				<td class="index__td-order">{{ i.state }}</td>
 				
 				<td>
 				<form action={{url_for("index") + "delivery/create/" + i.id|string}} method="POST">
