@@ -63,7 +63,6 @@
         <tr>
 
 			<td class="index__td-text index-text__state">Статус заказа</td>
-            <td class="index__td-text index-text__state">Имя пользователя</td>
 
         </tr>
 
@@ -76,8 +75,9 @@
 
             {% for i in list %}
 
+
                 <td class="index__td">{{ i.state }}</td>
-                <td class="index__td">{{ i.username }}</td>
+
                 <td>
 
                     <p class="index__text" ><a class="index__btn-cart" href={{url_for("index") + "users/orders/" + i.id|string}}>
@@ -89,6 +89,7 @@
                 </td>
 
             </tr>
+
         {% endfor %}
     </table>
     </div>

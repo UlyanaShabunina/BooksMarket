@@ -100,7 +100,7 @@ def deleteUser(id):
         db.session.commit()
 
     except:
-        flash('Ошибка удаления - вы теряете клиента!',  'info')
+        flash('Ошибка удаления - у покупателя есть активный заказ',  'info')
         return render_template('/admin/usersList.html')
 
     ##user_to_delete = Users.query.get(id)
@@ -113,7 +113,7 @@ def deleteUser(id):
         return redirect(url_for('.usersList'))
 
     except:
-        flash('Ошибка удаления - вы теряете клиента!',  'info')
+        flash('Ошибка удаления - у покупателя есть активный заказ',  'info')
         return render_template('/admin/usersList.html')
 
 
@@ -245,7 +245,7 @@ def delete(id):
     proverka = Orders.query.filter_by(product=id).all()
 
     if proverka:
-        flash('Товар нельзя удалить', 'info')
+        flash('Товар нельзя удалить. Товар в активном заказе', 'info')
         return redirect(url_for('.product'))
     else:
         student_to_delete = Product.query.get(id)

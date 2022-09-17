@@ -302,6 +302,7 @@ def accept(id):
 def cart():
     info = []
     prod = []
+    tov=[]
 
     uid = current_user.get_id()
     so = Profiles.query.get(uid)
@@ -312,11 +313,12 @@ def cart():
         for i in list:
             # print(i.id_prod)
             sa = Product.query.filter_by(id=i.id_prod).all()
+
             prod += sa
 
     except:
         print('ОШИБКА')
-    return render_template('/users/cart.html', list=info, prod=prod)
+    return render_template('/users/cart.html', list=info, prod=prod, tov=tov)
 
 
 @users.route('/deleteCart/<int:id>')
