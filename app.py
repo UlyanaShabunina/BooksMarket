@@ -48,9 +48,9 @@ def register():
         if Users.query.filter_by(number=number).all():
             flash('Номер занят. Введите другой номер', 'info')
             return redirect(url_for("register"))
-        if username == 'admin' or username == 'delivery':
-            flash('Недопустимый логин. Введите другой логин', 'info')
-            return redirect(url_for("register"))
+        #if username == 'admin' or username == 'delivery':
+            #flash('Недопустимый логин. Введите другой логин', 'info')
+            #return redirect(url_for("register"))
         else:
             try:
                 if psw == psw2:
