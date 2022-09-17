@@ -76,13 +76,16 @@
 
 
         {% for i in list %}
+            {% for j in tov %}
+                {% if i.product == j.id %}
             <tr>
-				<td class="create__td">{{ i.product }}
-                <a href={{url_for("index") + "users/prod/" + i.id|string}}>Просмотреть товар</a></td>
+				<td class="create__td">{{ j.name }} {{j.author}}
 				<td class="create__td">{{ i.delivary }}</td>
 				<td class="create__td">{{ i.live }}</td>
 
             </tr>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
 
 
@@ -135,15 +138,18 @@
 			<td class="create__td-text">Вид доставки</td>
             <td class="create__td-text">Место жительства</td>
             {% for i in info %}
+            {% for j in tov1 %}
+                {% if i.product == j.id %}
             <tr>
 
-				<td class="create__td">{{ i.product }}
-                    <a href={{url_for("index") + "users/prod/" + i.id|string}}>Просмотреть товар</a></td>
+				<td class="create__td">{{ j.name }} {{j.author}}
 				<td class="create__td">{{ i.delivary }}</td>
 				<td class="create__td">{{ i.live }}</td>
 
             </tr>
-        {% endfor %}
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
         </table>
         <table  width="100%">
         <tr>

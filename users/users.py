@@ -199,6 +199,8 @@ def create():
     info1 = []
     info2 = []
     prod1 = []
+    tov = []
+    tov1 = []
 
     id = current_user.get_id()
 
@@ -216,10 +218,12 @@ def create():
 
     for i in info1:
         sa = Users.query.filter_by(id=i.login).all()
+        tov += Product.query.filter_by(id=i.product).all()
         prod += sa
 
     for i in info2:
         sa1 = Users.query.filter_by(id=i.login).all()
+        tov1 += Product.query.filter_by(id=i.product).all()
         prod1 += sa1
 
     if request.method == "POST":
@@ -252,12 +256,12 @@ def create():
                 return redirect(url_for('.create'))
             else:
                 flash('Пароли не совпадают', 'info')
-                return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1)
+                return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1, tov=tov, tov1=tov1)
         except:
             flash('Ошибка обновления', 'info')
-            return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1)
+            return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1, tov=tov, tov1=tov1)
     else:
-        return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1)
+        return render_template("users/create.html", stud=stud, list=orderss, info=info, prod=prod, prod1=prod1, tov=tov, tov1=tov1)
 
 
 @users.route("/delivary", methods=["POST", "GET"])
