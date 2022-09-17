@@ -205,21 +205,21 @@ def create():
     stud = Users.query.get(id)
     p = Profiles.query.get(stud.profile_id)
 
-    orderss = Orders.query.filter_by(login=stud.username, state="Ждет подтверждения").all()
+    orderss = Orders.query.filter_by(login=stud.id, state="Ждет подтверждения").all()
 
-    info = Orders.query.filter_by(login=stud.username, state="На складе").all()
-    info += Orders.query.filter_by(login=stud.username, state='Заказ в пути').all()
-    info += Orders.query.filter_by(login=stud.username, state='Заказ прибыл к месту назначения').all()
+    info = Orders.query.filter_by(login=stud.id, state="На складе").all()
+    info += Orders.query.filter_by(login=stud.id, state='Заказ в пути').all()
+    info += Orders.query.filter_by(login=stud.id, state='Заказ прибыл к месту назначения').all()
 
     info1 = orderss
     info2 = info
 
     for i in info1:
-        sa = Users.query.filter_by(username=i.login).all()
+        sa = Users.query.filter_by(id=i.login).all()
         prod += sa
 
     for i in info2:
-        sa1 = Users.query.filter_by(username=i.login).all()
+        sa1 = Users.query.filter_by(id=i.login).all()
         prod1 += sa1
 
     if request.method == "POST":
