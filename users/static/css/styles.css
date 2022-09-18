@@ -67,7 +67,7 @@ img.logo-img {
 }
 
 div.container {
-    max-width: 1500px;
+    max-width: 1700px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -238,7 +238,6 @@ td.index__td {
     border: none;
     background-color: #f6f6f6;
     margin-top: 4px;
-    height: 116px;
     padding: 20px 15px;
 }
 
@@ -468,7 +467,7 @@ td.prod__td {
     background-color: #f6f6f6;
     margin-top: 4px;
     height: 60px;
-    padding: 20px 15px;
+    padding: 0px 5px;
 }
 
 td.prod__td-text {
