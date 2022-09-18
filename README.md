@@ -12,7 +12,7 @@
 + [Техническое задание](https://drive.google.com/file/d/17KnttdK0S2v_dVZZlbH-unYGeNdizfPk/view?usp=sharing)    
 + [Курсовая работа](https://drive.google.com/file/d/1ay1rHgCIu-kQ2Fs_MwCVL-CAvtnQrPOW/view?usp=sharing)  
 + [Презентация](https://disk.yandex.ru/i/0_jZNeM65ITJUA)  
-+ [Видео](https://drive.google.com/file/d/12wV7szlrFhKwEPpwkI1wBHTMJVVGVtjd/view?usp=sharing)
++ [Видео](https://disk.yandex.ru/i/7FpgGRIm-sSN5g)
 # Сайт  
 + [Ссылка на сайт](https://booksmarket788.herokuapp.com/)
 ### Для авторизации в системе: ###  
