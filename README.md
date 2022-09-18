@@ -14,7 +14,7 @@
 + [Презентация](https://disk.yandex.ru/i/0_jZNeM65ITJUA)  
 + Видео
 # Сайт  
-+ [Ссылка на сайт](https://booksmarket777.herokuapp.com/)
++ [Ссылка на сайт](https://booksmarket788.herokuapp.com/)
 ### Для авторизации в системе: ###  
 ###### Администратор (продавец): ######  
 **Логин** admin **Пароль** 123  
