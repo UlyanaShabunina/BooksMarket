@@ -11,7 +11,7 @@
 # Документация  
 + [Техническое задание](https://drive.google.com/file/d/17KnttdK0S2v_dVZZlbH-unYGeNdizfPk/view?usp=sharing)    
 + [Курсовая работа](https://drive.google.com/file/d/1oQIvaHDXUaerKwGENTxfhkzvKlb6zN5g/view?usp=sharing)  
-+ Презентация
++ [Презентация](https://docs.google.com/presentation/d/1pdknVhs8yWXL58HZ5vWFBPOzUPg-PZ9z/edit?usp=sharing&ouid=108918081830392746312&rtpof=true&sd=true)  
 + Видео
 # Сайт  
 + [Ссылка на сайт](https://booksmarket777.herokuapp.com/)
