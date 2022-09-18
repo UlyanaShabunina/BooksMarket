@@ -10,7 +10,7 @@
 + [Дизайн-проект](https://www.figma.com/file/mpYBlIvDR8e24A1yZOfsFQ/Untitled?node-id=0%3A1)  
 # Документация  
 + [Техническое задание](https://drive.google.com/file/d/17KnttdK0S2v_dVZZlbH-unYGeNdizfPk/view?usp=sharing)    
-+ Курсовая работа
++ [Курсовая работа](https://drive.google.com/file/d/1oQIvaHDXUaerKwGENTxfhkzvKlb6zN5g/view?usp=sharing)  
 + Презентация
 + Видео
 # Сайт  
