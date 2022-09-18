@@ -67,7 +67,7 @@ img.logo-img {
 }
 
 div.container {
-    max-width: 1500px;
+    max-width: 1700px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -228,8 +228,7 @@ td.index__td-text {
     border: none;
     color: #fe3e57;
     margin-top: 4px;
-    height: 70px;
-    padding: 20px 15px;
+    padding: 0px 5px;
 }
 
 td.index__td {

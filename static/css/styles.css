@@ -81,14 +81,14 @@ h2.img-title {
 p.img-text {
     color: #fff;
     font-family: open sans,Sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 30px;
     font-weight: 500;
 }
 
 h1.box-title {
     font-family: Playfair Display;
-    font-size: 67px;
+    font-size: 35px;
     color: #fff;
     font-weight: 700;
     line-height: 1.2;
@@ -96,18 +96,19 @@ h1.box-title {
 }
 
 div.img-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    height: 650px;
+    height: 600px;
     margin-bottom: 50px;
 }
 
 img.img {
-    height: 650px;
+    height: 600px;
 }
 
 div.container {
-    max-width: 1500px;
+    max-width: 1700px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -604,6 +605,7 @@ div.index-forms {
 
 
 div.img-box {
+    width: 40%;
     background-color: #29282d;
     padding: 50px;
     display: flex;
