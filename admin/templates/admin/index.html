@@ -31,29 +31,30 @@
             </tr>
         {% endfor %}
 	</table>
+
+	<table class="index__table " width="100%">
+    <tr>
+        <td class="index__td-text">Товар</td> </tr>
+        {% if c %}
+            {% for p in range(c) %}
+            <tr>
+            <td class="index__td"> "{{ tov[p].name}}" {{ tov[p].author}} {% endfor %} {% endif %}
+        </tr>
+	</table>
+
     <table class="index__table"  width="100%">
         <tr>
-
-
-			<td class="index__td-text">Товар</td>
 			<td class="index__td-text">Вид доставки</td>
             <td class="index__td-text">Место жительства</td>
 			<td class="index__td-text">Статус заказа</td>
         </tr>
 
         {% for i in list %}
-		{% for j in tov %}
-		{% if i.product == j.id %}
             <tr>
-
-
-				<td class="index__td">"{{ j.name }}" {{j.author}}</td>
 				<td class="index__td">{{ i.delivary }}</td>
 				<td class="index__td">{{ i.live }}</td>
 				<td class="create__td">{{ i.state }}</td>
             </tr>
-		{% endif %}
-        {% endfor %}
 		{% endfor %}
 
     </table>

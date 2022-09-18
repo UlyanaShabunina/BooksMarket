@@ -79,33 +79,35 @@ h2.img-title {
 }
 
 p.img-text {
-    color: #742f35;
+    color: #fff;
     font-family: open sans,Sans-serif;
     font-size: 16px;
-        line-height: 30px;
-    font-weight: 400;
+    line-height: 30px;
+    font-weight: 500;
 }
 
-div.img-wrapper {
+h1.box-title {
     font-family: Playfair Display;
-    padding: 200px 0;
-    font-size: 90px;
+    font-size: 67px;
     color: #fff;
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -6px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 div.img-container {
-    background-image: url(https://jupiterx.artbees.net/book-shop/wp-content/uploads/sites/480/2020/11/home-bg-01.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    height: 650px;
+    margin-bottom: 50px;
+}
+
+img.img {
+    height: 650px;
 }
 
 div.container {
-    max-width: 1200px;
+    max-width: 1500px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -591,39 +593,53 @@ div.logo {
 
 h3.title-book {
     margin: 0 auto;
-    color: #fe3e57;
+    color: #29282d;
 }
-
-
 
 div.index-forms {
     max-width: 570px;
+    margin: 0 auto;
+}
+
+
+
+div.img-box {
+    background-color: #29282d;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 input.input-login {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-top: 4px;
+    height: 60px;
+    padding: 0 15px;
     align-items: center;
-    background-color: #fe3e57;
+    background-color: #29282d;
   text-transform: uppercase;
   font-size: 16px;
   color: #fff;
-    padding: 10px 0;
-  border: none;
-    width: 250px;
   cursor: pointer;
     margin-bottom: 10px;
 }
 
 input.input-reg {
+    display: block;
+    width: 100%;
+    border: none;
+    margin-top: 4px;
+    height: 60px;
+    padding: 0 15px;
     align-items: center;
-    background-color: #fe3e57;
+    background-color: #29282d;
   text-transform: uppercase;
   font-size: 16px;
   color: #fff;
-    padding: 10px 0;
-  border: none;
-    width: 250px;
   cursor: pointer;
-    margin-bottom: 10px;
 }
 
 div.register__inner {

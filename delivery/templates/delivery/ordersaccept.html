@@ -41,28 +41,36 @@
 
         {% for i in user %}
             <tr>
-
-                <td class="index__td-order">{{ i.name }}</td>
+                <td class="index__td-order">{{ i.name }} </td>
 				<td class="index__td-order">{{ i.number }}</td>
 				<td class="index__td-order">{{ i.email }}</td>
-
             </tr>
+
         {% endfor %}
-    </table>
+            </table>
+
+
     <table class="index__table " width="100%">
         <tr>
-			<td class="index__td-text">Товар</td>
+            <td class="index__td-text">Товар</td> </tr>
+                {% if c %}
+                {% for p in range(c) %}
+                <tr>
+				<td class="index__td-order"> "{{ tov[p].name}}" {{ tov[p].author}} {% endfor %} {% endif %}
+            </tr>
+    </table>
+
+    <table class="index__table " width="100%">
+        <tr>
 			<td class="index__td-text">Вид доставки</td>
             <td class="index__td-text">Место жительства</td>
 			<td class="index__td-text">Статус заказа</td>
 			<td class="index__td-text">Обновить статус заказа</td>
         </tr>
 
+
         {% for i in list %}
-                    {% for j in tov %}
-                {% if i.product == j.id %}
-            <tr>
-				<td class="index__td-order">"{{ j.name }}" {{j.author}}</td>
+        <tr>
 				<td class="index__td-order">{{ i.delivary }}</td>
 				<td class="index__td-order">{{ i.live }}</td>
 				<td class="index__td-order">{{ i.state }}</td>
@@ -78,8 +86,8 @@
 					<a href={{url_for("index") + "delivery/delete1/" + i.id|string}}>Завершить заказ</a>
                 </td>
             </tr>
-                    {% endif %}
-            {% endfor %}
+
+
         {% endfor %}
 
 

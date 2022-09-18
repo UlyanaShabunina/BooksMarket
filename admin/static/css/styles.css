@@ -67,7 +67,7 @@ img.logo-img {
 }
 
 div.container {
-    max-width: 1230px;
+    max-width: 1500px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -798,4 +798,3 @@ div.table-box {
 td.index-text__state {
     padding: 31px 62px;
 }
-

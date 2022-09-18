@@ -103,6 +103,7 @@ def orders():
     user1 = []
     info1 =[]
     tov=[]
+    c=0
 
     try:
         info = Orders.query.filter_by(state='Ждет подтверждения').all()
@@ -111,6 +112,7 @@ def orders():
         for i in info1:
             uss = Users.query.filter_by(id=i.login).all()
             tov += Product.query.filter_by(id=i.product).all()
+            c+=1
             user1 += uss
 
     except:
@@ -118,7 +120,7 @@ def orders():
 
     else:
         ord = Orders.query.order_by(Orders.id).all()
-        return render_template("/delivery/orders.html", ord=ord, list=info1, user1=user1, tov=tov)
+        return render_template("/delivery/orders.html", ord=ord, list=info1, user1=user1, tov=tov,c=c)
 
 
 @delivery.route('/look/<int:id>')
@@ -127,7 +129,7 @@ def look(id):
         return redirect(url_for('login'))
 
     look = Orders.query.get(id)
-    user = Users.query.filter_by(username=look.id).first()
+    user = Users.query.filter_by(id=look.login).first()
     return render_template('/delivery/look.html', look=look, user=user)
 
 
@@ -155,6 +157,7 @@ def information():
     info = []
     user = []
     tov = []
+    с = 0
     try:
         info1 = Orders.query.filter_by(state='Заказ прибыл к месту назначения').all()
         info1 += Orders.query.filter_by(state='Заказ в пути').all()
@@ -165,10 +168,11 @@ def information():
         for i in info:
             us = Users.query.filter_by(id=i.login).all()
             tov += Product.query.filter_by(id=i.product).all()
+            с += 1
             user += us
     except:
         print("Error")
-    return render_template('/delivery/ordersaccept.html', list = info, user=user, tov=tov)
+    return render_template('/delivery/ordersaccept.html', list = info, user=user, tov=tov, c=с)
 
 
 @delivery.route('/delete/<int:id>')
